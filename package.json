@@ -1,0 +1,28 @@
+{
+  "name": "fast-hook",
+  "version": "1.3.0",
+  "description": "Easily create Discord Webhooks & create fallbacks using Discord.js v13",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DerexM/fast-hook.git"
+  },
+  "keywords": [
+    "quick",
+    "discord.js",
+    "webhooks",
+    "fast",
+    "hook"
+  ],
+  "author": "DereX",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DerexM/fast-hook/issues/new"
+  },
+  "homepage": "https://github.com/DerexM/fast-hook#readme",
+  "dependencies": {},
+  "devDependencies": {}
+}
