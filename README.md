@@ -9,7 +9,7 @@ Fast-Hook
     </p>
 </div> 
 
-### Support Discord: [https://discord.gg/derex](https://discord.com/invite/Qjuy3AHAYy)
+### Support Discord: [https://discord.gg/support](https://discord.gg/63sQPf5vMQ)
 
 ---
 
@@ -76,4 +76,4 @@ send(message.channel, embed, {
 
 ---
 
-© [DomeQ#0001](https://discord.gg/7BeDqdRFtE) 2018 || Edited by [Derex#0002](https://discord.com/invite/Qjuy3AHAYy)
+© [DomeQ#0001](https://discord.gg/63sQPf5vMQ) 2018 || Edited by [Derex#0002](https://discord.gg/63sQPf5vMQ)
