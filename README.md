@@ -28,6 +28,8 @@ Parameter | Type | Optional | Default | Description
 --- | --- | --- | --- | ---
 channel | `textChannel` | false | *none* | The channel to send the webhook to
 message | `string` **or** `embed` | false | *none* | The message or embed to send
+components | `object` | true | *none* | The components from Discord (buttons etc)
+attachments | `object` | true | *none* | The attachments (image etc)
 options | `object` | true | *none* | The options for the webhook
 options.name | `string` | true | Server Invite | The title of the webhook
 options.icon | `iconURL` | true | *Webhook Icon* | The icon of the webhook
