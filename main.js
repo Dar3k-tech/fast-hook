@@ -1,4 +1,4 @@
-module.exports = async(channel, message, options = {}) => {
+module.exports = async(channel, message, attachment, components, options = {}) => {
 
     if(!channel)
         return console.log(`[FAST-HOOK] Invalid channel.`);
@@ -46,6 +46,8 @@ module.exports = async(channel, message, options = {}) => {
         callback = await hook.send({
             content: message,
             username: options.name,
+            components: [components],
+            files: [attachment],
             avatarURL: options.icon,
             embeds: options.embeds,
         });
@@ -54,6 +56,8 @@ module.exports = async(channel, message, options = {}) => {
             content: message,
             username: options.name,
             avatarURL: options.icon,
+            files: [attachment],
+            components: [components],
             embeds: options.embeds,
             allowedMentions: { parse: [] }
         });
