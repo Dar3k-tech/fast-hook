@@ -24,16 +24,18 @@ const send = require('fast-webhook');
 ```
 
 ## Documentation
-Parameter | Type | Optional | Default | Description
---- | --- | --- | --- | ---
-channel | `textChannel` | false | *none* | The channel to send the webhook to
-message | `string` **or** `embed` | false | *none* | The message or embed to send
-components | `object` | true | *none* | The components from Discord (buttons etc)
-attachments | `object` | true | *none* | The attachments (image etc)
-options | `object` | true | *none* | The options for the webhook
-options.name | `string` | true | Server Invite | The title of the webhook
-options.icon | `iconURL` | true | *Webhook Icon* | The icon of the webhook
-options.mentions | `boolean` | true | *True* | If `false` webhook will don't ping anyone.
+Parameter | Type                    | Optional | Default        | Description
+--- |-------------------------|----------|----------------| ---
+channel | `textChannel`           | false    | *none*         | The channel to send the webhook to
+message | `string` **or** `embed` | false    | *none*         | The message or embed to send
+options | `object`                | true     | *none*         | The options for the webhook
+options.name | `string`                | true     | Server Invite  | The title of the webhook
+options.icon | `iconURL`               | true     | *Webhook Icon* | The icon of the webhook
+options.mentions | `boolean`               | true     | *True*         | If `false` webhook will don't ping anyone.
+options.attachments | `boolean`               | false    | *false*        | Status of adding attachments
+options.components | `boolean`               | false    | *false*         | Status of adding components
+components | `object`                | true     | *none*         | The components from Discord (buttons etc)
+attachments | `object`                | true     | *none*         | The attachments (image etc)
 ---
 
 ## Examples
@@ -48,7 +50,10 @@ const send = require('fast-webhook');
 
 send(message.channel, 'Current Settings...', {
     name: 'Settings',
-    icon: 'https://i.imgur.com/X9eAmHm.png'
+    icon: 'https://i.imgur.com/X9eAmHm.png',
+    mentions: false,
+    attachments: false,
+    components: false
 })
 ```
 </details>
@@ -69,7 +74,10 @@ const embed = new Discord.MessageEmbed()
 
 send(message.channel, embed, {
     name: 'Now Playing',
-    icon: 'https://i.imgur.com/44YTwve.png'
+    icon: 'https://i.imgur.com/44YTwve.png',
+    mentions: false,
+    attachments: false,
+    components: false
 })
 ```
 </details>

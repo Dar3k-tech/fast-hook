@@ -1,39 +1,36 @@
-module.exports = async(channel, message, attachment, components, options = {}) => {
+module.exports = async(channel, message, options = {}, attachment, components) => {
 
-    if(!channel)
+    if (!channel)
         return console.log(`[FAST-HOOK] Invalid channel.`);
-    if(!channel.send || !channel.fetchWebhooks)
+    if (!channel.send || !channel.fetchWebhooks)
         return console.log(`[FAST-HOOK] Invalid channel.`)
-    if(!message)
+    if (!message)
         return console.log(`[FAST-HOOK] Invalid message/embed.`)
     options = {
         mentions: options.mentions,
         name: options.name || (channel.client.user.username || "Bot"),
-        icon: options.icon || (channel.client.user.displayAvatarURL({ dynamic: true }) || "")        
+        icon: options.icon || (channel.client.user.displayAvatarURL({dynamic: true}) || ""),
+        attachments: options.attachments || false,
+        components: options.components || false
     }
-    if(isNaN(options.delete)) options.delete = false;
 
     let webhooks = await channel.fetchWebhooks().catch(() => {
         console.log(`[FAST-HOOK] Can't fetch webhooks in #${channel.name} (${channel.id}) at guild ${channel.guild.name} (${channel.guild.id})`)
     });
 
-    if(!webhooks) return;
+    if (!webhooks) return;
 
     let hook = webhooks.find(w => w.name === channel.client.user.username)
 
-    let error = false;
-    if(!hook) {
+    if (!hook) {
         try {
-            hook = await channel.createWebhook(channel.client.user.username || "Slash", {
-                avatar: channel.client.user.displayAvatarURL({ dynamic: true }) || ""
+            hook = await channel.createWebhook(channel.client.user.username || "Ups", {
+                avatar: channel.client.user.displayAvatarURL({dynamic: true}) || ""
             });
-        } catch(err) {
-            error = true;
+        } catch (err) {
             console.log(`[FAST-HOOK] Can't create webhook in #${channel.name} (${channel.id}) at guild ${channel.guild.name} (${channel.guild.id})`)
         }
     }
-
-    if(error) return;
 
     if (typeof message !== 'string' && ['MessageEmbed'].includes(message.constructor.name)) {
         options.embeds = [message];
@@ -42,24 +39,22 @@ module.exports = async(channel, message, attachment, components, options = {}) =
 
     let callback;
 
-    if(options.mentions) {
+    if (options.mentions || options.attachments || options.components) {
         callback = await hook.send({
             content: message,
             username: options.name,
-            components: [components],
-            files: [attachment],
             avatarURL: options.icon,
             embeds: options.embeds,
+            files: [attachments],
+            components: [components]
         });
     } else {
         callback = await hook.send({
             content: message,
             username: options.name,
             avatarURL: options.icon,
-            files: [attachment],
-            components: [components],
             embeds: options.embeds,
-            allowedMentions: { parse: [] }
+            allowedMentions: {parse: []}
         });
     }
 
