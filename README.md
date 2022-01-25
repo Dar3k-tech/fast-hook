@@ -9,7 +9,7 @@ Fast-Hook
     </p>
 </div> 
 
-### Support Discord: [https://discord.gg/support](https://discord.gg/63sQPf5vMQ)
+### Support Discord: soon (Dar3k#1121)
 
 ---
 
@@ -20,51 +20,50 @@ This package creates an easy way to send webhooks, *as well as providing fallbac
 ---
 
 ```js
-const send = require('fast-webhook');
+const send = require('fast-hook');
 ```
 
 ## Documentation
-Parameter | Type                    | Optional | Default        | Description
---- |-------------------------|----------|----------------| ---
-channel | `textChannel`           | false    | *none*         | The channel to send the webhook to
-message | `string` **or** `embed` | false    | *none*         | The message or embed to send
-options | `object`                | true     | *none*         | The options for the webhook
-options.name | `string`                | true     | Server Invite  | The title of the webhook
-options.icon | `iconURL`               | true     | *Webhook Icon* | The icon of the webhook
-options.mentions | `boolean`               | true     | *True*         | If `false` webhook will don't ping anyone.
-options.attachments | `boolean`               | false    | *false*        | Status of adding attachments
-options.components | `boolean`               | false    | *false*         | Status of adding components
-components | `object`                | true     | *none*         | The components from Discord (buttons etc)
-attachments | `object`                | true     | *none*         | The attachments (image etc)
+Parameter | Type          | Optional | Default        | Description
+--- |---------------|----------|----------------| ---
+options | `object`      | true     | *none*         | The options for the webhook
+options.channel | `textChannel` | false    | *none*         | Channel to send webhook
+options.message | `message`     | true     | *none*         | Message to send with webhook
+options.name | `string`      | true     | Server Invite  | The title of the webhook
+options.icon | `iconURL`     | true     | *Webhook Icon* | The icon of the webhook
+options.mentions | `boolean`     | true     | *True*         | If `false` webhook will don't ping anyone.
+options.attachments | `object`      | true     | *null*         | Object with attachments
+options.components | `object`      | true     | *null*         | Object with components
+options.embed | `object` | true | *null* | Object with embeds
 ---
 
 ## Examples
 
 <details>
-  <summary><b>Normal message</b></summary>
+  <summary><b>Normal message (clik)</b></summary>
 
   ![](https://i.imgur.com/rW8ciG1.png) 
 ```js
-const send = require('fast-webhook');
+const send = require('fast-hook');
 
 
-send(message.channel, 'Current Settings...', {
+send({
+    channel: message.channel,
+    message: 'Current Settings...',
     name: 'Settings',
     icon: 'https://i.imgur.com/X9eAmHm.png',
     mentions: false,
-    attachments: false,
-    components: false
 })
 ```
 </details>
 
 <details>
-  <summary><b>Embed message</b></summary>
+  <summary><b>Embed message (clik)</b></summary>
 
 ![](https://i.imgur.com/U4lItWR.png) 
 ```js
 const Discord = require('discord.js');
-const send = require('fast-webhook');
+const send = require('fast-hook');
 
 const embed = new Discord.MessageEmbed()
     .setColor("#77C2AE")
@@ -72,16 +71,16 @@ const embed = new Discord.MessageEmbed()
     .setDescription(`**By *Clayton James***`)
     .setFooter(`Just a normal embed!`);
 
-send(message.channel, embed, {
+send({
+    channel: message.channel,
+    embeds: [embed],
     name: 'Now Playing',
     icon: 'https://i.imgur.com/44YTwve.png',
-    mentions: false,
-    attachments: false,
-    components: false
+    mentions: false
 })
 ```
 </details>
 
 ---
 
-© [DomeQ#0001](https://discord.gg/63sQPf5vMQ) 2018 || Edited by [Derex#0002](https://discord.gg/63sQPf5vMQ)
+© [DomeQ#0001](https://discord.gg) 2018 || Edited by [Dar3k#1121](https://discord.gg/)
