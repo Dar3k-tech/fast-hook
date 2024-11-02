@@ -1,15 +1,16 @@
 {
   "name": "fast-hooks",
-  "version": "1.0.0",
-  "description": "Easily create Discord Webhooks & create fallbacks using Discord.js v13",
-  "main": "main.js",
+  "version": "2.0.0",
+  "description": "Easily create Discord Webhooks & create fallbacks using Discord.js v14.x",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DerexM/fast-hook.git"
+    "url": "git+https://github.com/realderek/fast-hook.git"
   },
+  "type": "module",
   "keywords": [
     "quick",
     "discord.js",
@@ -17,12 +18,14 @@
     "fast",
     "hook"
   ],
-  "author": "Dar3k",
+  "author": "realdarek",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Dar3k-tech/fast-hook/issues/new"
+    "url": "https://github.com/realdarek/fast-hook/issues/new"
   },
-  "homepage": "https://github.com/Dar3k-tech/fast-hook#readme",
-  "dependencies": {},
-  "devDependencies": {}
+  "homepage": "https://github.com/realdarek/fast-hook#readme",
+  "dependencies": {
+    "discord-api-types": "^0.37.103",
+    "discord.js": "^14.16.3"
+  }
 }
