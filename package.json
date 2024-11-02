@@ -27,5 +27,8 @@
   "dependencies": {
     "discord-api-types": "^0.37.103",
     "discord.js": "^14.16.3"
+  },
+  "publishConfig": {
+    "@realdarek:registry": "https://npm.pkg.github.com"
   }
 }
