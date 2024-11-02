@@ -15,15 +15,12 @@ The package is a module that makes it easy to work with webhooks (discord.js). W
 
 ## Instalation
 
----
-
 ```bash
 $ npm install --save fast-hook
 ```
 
 ## Usage
 
----
 ```js
 import fhook from 'fast-hook';
 
@@ -55,7 +52,6 @@ await fhook.send(trigger, {
 
 ## Rest of examples:
 
----
 _Click to show content_
 
 
@@ -368,7 +364,6 @@ await fhook.send(trigger, {
 
 ## Documentation table
 
----
 | Parameter           | Type                           | Optional | Default               | Description                                                                                                                                                                                                                                                                                                    |
 |---------------------|--------------------------------|----------|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | trigger             | `textChannel` or `Webhook URL` | false    | *none*                | The trigger is a guild channel object or webhook url. If you specify a channel, the package searches for a webhook created by the bot on that channel and uses it (if it doesn't have one, it creates one). If you specify a webhook url, the package will search for it and, if it can, send a message there. |
@@ -389,5 +384,4 @@ await fhook.send(trigger, {
 | options.poll        | `Object{}`                     | true     | *none*                | Object with poll                                                                                                                                                                                                                                                                                               |
 
 ---
-
 © 2018-2024 Created by [@realdarek](https://discord.gg/JCaTDJRz7P) 
