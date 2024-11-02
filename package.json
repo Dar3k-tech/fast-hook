@@ -29,6 +29,6 @@
     "discord.js": "^14.16.3"
   },
   "publishConfig": {
-    "@realdarek:registry": "https://npm.pkg.github.com"
+    "@derex:registry": "https://npm.pkg.github.com"
   }
 }
