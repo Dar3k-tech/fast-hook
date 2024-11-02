@@ -1,5 +1,5 @@
 {
-  "name": "fast-hooks",
+  "name": "fast-hook",
   "version": "2.0.0",
   "description": "Easily create Discord Webhooks & create fallbacks using Discord.js v14.x",
   "main": "app.js",
