@@ -31,6 +31,6 @@ jobs:
           VERSION=${GITHUB_REF#refs/tags/v}
           npm version "$VERSION" --no-git-tag-version
 
-      - run: npm publish --tag beta
+      - run: npm publish --tag dev
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOK }}
