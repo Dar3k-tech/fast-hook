@@ -16,7 +16,7 @@ import Utils from './utils.js';
  * @property {Object|null} [poll] - Object with poll to send ( Check readme.md for more info )
  */
 
-export class FastHook {
+class FastHook {
 
     /**
      * Sends a message via a webhook quickly.
@@ -89,3 +89,5 @@ export class FastHook {
         }
     }
 }
+
+export default FastHook;
