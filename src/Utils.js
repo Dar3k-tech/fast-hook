@@ -1,5 +1,4 @@
-
-class Utils {
+export class Utils {
     static async getOrCreateHook(channel, name, icon, reason) {
         if (!channel.send || !channel.fetchWebhooks) {
             throw new TypeError("[FAST-HOOK] Invalid trigger provided. Must be a GuildChannel or Webhook URL.");
@@ -30,5 +29,3 @@ class Utils {
         } else return null;
     }
 }
-
-export default Utils;
