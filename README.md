@@ -9,7 +9,7 @@ The package is a module that makes it easy to work with webhooks (discord.js). W
 [![versionBadge](https://img.shields.io/npm/v/fast-hook?style=for-the-badge)](https://npmjs.com/fast-hook)
 [![discordBadge](https://img.shields.io/discord/896887381997813810?style=for-the-badge&color=7289da)](https://discord.gg/JCaTDJRz7P)
 
-> W następnej aktualizacji - awaryjne rozwiązania w przypadku braku uprawnień, wysyłanie zwykłej wiadomości gdy client nie posiada uprawnienia `Manage Webhooks` , poprawa kodu
+> In the next update - fallbacks for lack of permissions, sending a regular message when the client does not have the `Manage Webhooks` permission, code improvements
 
 [![DBIT SUPPORT](https://discordapp.com/api/guilds/896887381997813810/embed.png?style=banner2)](https://discord.gg/JCaTDJRz7P)
 
