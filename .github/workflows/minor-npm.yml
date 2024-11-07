@@ -1,4 +1,4 @@
-name: Release version
+name: Release Minor Version
 
 on:
   release:
@@ -15,9 +15,10 @@ jobs:
       - run: npm ci
       - run: npm test
 
-  publish-npm:
+  publish-npm-minor:
     needs: build
     runs-on: ubuntu-latest
+    if: contains(github.event.release.body, '#minor')
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -25,6 +26,10 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org/
       - run: npm ci
+      - run: npm version minor
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOK}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOK }}
+      - name: Push new version tag
+        run: |
+          git push origin HEAD --tags
