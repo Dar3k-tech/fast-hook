@@ -18,6 +18,7 @@ jobs:
   publish-npm-minor:
     needs: build
     runs-on: ubuntu-latest
+    if: contains(github.event.release.body, '#normal')
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
