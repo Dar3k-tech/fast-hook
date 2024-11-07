@@ -27,9 +27,18 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: |
-          VERSION=$(echo $GITHUB_REF | sed 's/refs\/tags\///')
-          npm version $VERSION --no-git-tag-version
+          VERSION=$(echo $GITHUB_REF | sed 's/refs\/tags\///')  # Odczytanie wersji z tagu
+          CURRENT_VERSION=$(node -p "require('./package.json').version")  # Pobranie obecnej wersji z package.json
 
+          # Porównanie wersji i aktualizacja tylko jeśli wersja się różni
+          if [ "$VERSION" != "$CURRENT_VERSION" ]; then
+            echo "Updating version to $VERSION"
+            npm version $VERSION --no-git-tag-version
+          else
+            echo "Version is already up to date"
+          fi
+
+      # Publikowanie na npm
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOK }}
