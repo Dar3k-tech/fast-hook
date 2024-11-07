@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/realderek/fast-hook.git"
+    "url": "git+https://github.com/realdarek/fast-hook.git"
   },
   "type": "module",
   "keywords": [
@@ -27,8 +27,5 @@
   "dependencies": {
     "discord-api-types": "^0.37.103",
     "discord.js": "^14.16.3"
-  },
-  "publishConfig": {
-    "@derex:registry": "https://npm.pkg.github.com"
   }
 }
