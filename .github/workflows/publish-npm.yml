@@ -45,4 +45,4 @@ jobs:
 
       - name: Push new version tag
         run: |
-          git push origin HEAD --tags
+          git push origin --tags
