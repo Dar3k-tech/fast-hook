@@ -1,4 +1,4 @@
-name: Beta to npm
+name: Dev to npm
 
 on:
   release:
@@ -26,7 +26,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci
 
-      - name: Update package version to beta
+      - name: Update package version to dev
         run: |
           VERSION=${GITHUB_REF#refs/tags/v}
           npm version "$VERSION" --no-git-tag-version
